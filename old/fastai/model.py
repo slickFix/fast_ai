@@ -181,12 +181,12 @@ def fit(model, data, n_epochs, opt, crit, metrics=None, callbacks=None, stepper=
     else: return vals
 
 def append_stats(ep_vals, epoch, values, decimals=6):
-    ep_vals[epoch]=list(np.round(values, decimals))
+    ep_vals[epoch]=list(values)
     return ep_vals
 
 def print_stats(epoch, values, visualize, prev_val=[], decimals=6):
     layout = "{!s:^10}" + " {!s:10}" * len(values)
-    values = [epoch] + list(np.round(values, decimals))
+    values = [epoch] + list(values)
     sym = ""
     if visualize:
         if epoch == 0:                                             pass        
